@@ -31,7 +31,7 @@ export default class Register extends Component {
         console.log(this.state.password)
 
         // Create user in API
-        fetch(`http://localhost:8088/users?email=${this.state.email}`)
+        fetch(`https://geo-zoo-api.herokuapp.com/users?email=${this.state.email}`)
             .then(r => r.json())
             .then(user => {
                 // User exists. Set local storage, and show home view
@@ -41,7 +41,7 @@ export default class Register extends Component {
 
                     // User doesn't exist
                 } else {
-                    return fetch("http://localhost:8088/users", {
+                    return fetch("https://geo-zoo-api.herokuapp.com/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

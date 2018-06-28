@@ -6,7 +6,7 @@ import './gamescore.css'
 export default class GameScore extends Component {
     
     // receives user score and active user 
-    postScore = () => {fetch("http://localhost:8088/scores", {
+    postScore = () => {fetch("https://geo-zoo-api.herokuapp.com/scores", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

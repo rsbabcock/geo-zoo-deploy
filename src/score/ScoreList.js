@@ -21,7 +21,7 @@ class ScoreList extends Component {
     // Handle for getting all scores
     handleScores = () => {
         // Determine if a user already exists in API
-        fetch(`http://localhost:8088/scores?userId=${this.props.activeUser}&_expand=user`)
+        fetch(`https://geo-zoo-api.herokuapp.com/scores?userId=${this.props.activeUser}&_expand=user`)
             .then(r => r.json())
             .then(scores => {
                 this.setState({
@@ -35,7 +35,7 @@ class ScoreList extends Component {
         // these variables count up the value of each percentage to get a total for each value
         // i.e c10 is 100% correct of game
         let c1=0, c2 =0 , c3=0, c4=0, c5=0, c6=0, c7=0, c8=0, c9 = 0, c10=0
-        fetch(`http://localhost:8088/scores?userId=${this.props.activeUser}`)
+        fetch(`https://geo-zoo-api.herokuapp.com/scores?userId=${this.props.activeUser}`)
             .then(r => r.json())
             .then(data => {
                data.map(score => {

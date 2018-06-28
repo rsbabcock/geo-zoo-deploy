@@ -72,7 +72,7 @@ class App extends Component {
     }.bind(this)
     // get annimals
     getAnimals = () => {
-        fetch("http://localhost:8088/animals")
+        fetch("https://geo-zoo-api.herokuapp.com/animals")
             .then(r => r.json())
             .then(animals => {
                 let randomals = animals
@@ -88,7 +88,7 @@ class App extends Component {
     }
     // function to get all continenet info
     getContinents = () => {
-        fetch("http://localhost:8088/continents")
+        fetch("https://geo-zoo-api.herokuapp.com/continents")
             .then(r => r.json())
             .then(c => {
                 this.setState({
